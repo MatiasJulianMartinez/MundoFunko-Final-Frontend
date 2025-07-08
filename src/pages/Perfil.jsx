@@ -8,7 +8,6 @@ const Perfil = () => {
   const { usuario } = useContext(AuthContext);
   const [perfil, setPerfil] = useState(null);
 
-
   useEffect(() => {
     // Función que obtiene el token, decodifica el ID de usuario y trae su perfil
     const fetchPerfil = async () => {
@@ -16,7 +15,7 @@ const Perfil = () => {
         const token = localStorage.getItem("token");
         const decoded = jwtDecode(token);
         const response = await axios.get(
-          `http://localhost:3000/api/users/${decoded.id}`,
+          `https://backend-hibridas.onrender.com/api/users/${decoded.id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setPerfil(response.data);
@@ -31,12 +30,9 @@ const Perfil = () => {
   // Mientras no llega la respuesta, muestra un mensaje
   if (!perfil) return <p className="text-center mt-5">Cargando perfil...</p>;
 
-
   return (
     <div className="container mt-5">
-      <h5 className="mb-3 text-muted">
-        Bienvenido, {usuario?.email}
-      </h5>
+      <h5 className="mb-3 text-muted">Bienvenido, {usuario?.email}</h5>
       <h2 className="mb-4">Mi Perfil</h2>
       <ul className="list-group">
         <li className="list-group-item">
