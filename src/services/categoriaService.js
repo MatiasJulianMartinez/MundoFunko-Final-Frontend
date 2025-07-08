@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_BACKEND_URL;
+const API_URL = import.meta.env.VITE_BACKEND_URL + "/categorias";
 
 // Obtiene todas las categorías desde el backend
 export const getCategorias = async () => {

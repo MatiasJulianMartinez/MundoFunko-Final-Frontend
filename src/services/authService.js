@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // URL base para los endpoints de login y registro de usuarios
-const API_URL = import.meta.env.VITE_BACKEND_URL;
+const API_URL = import.meta.env.VITE_BACKEND_URL + "/users";
 
 // Envia email y contraseña al endpoint /login y devuelve los datos de la respuesta
 export const loginUsuario = async (email, password) => {

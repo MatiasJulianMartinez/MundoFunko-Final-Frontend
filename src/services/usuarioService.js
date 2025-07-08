@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_BACKEND_URL;
+const API_URL = import.meta.env.VITE_BACKEND_URL + "/users";
 
 // Obtiene todos los usuarios desde el backend
 export const getUsuarios = async (token) => {
